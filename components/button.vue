@@ -18,6 +18,7 @@ export default {
 @import "../static/assets/main.scss";
 
 button {
+  max-height: 40px;
   padding: 6px 20px;
   color: $white;
   font-size: inherit;

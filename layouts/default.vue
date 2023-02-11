@@ -1,8 +1,8 @@
 <template>
-  <div class="main">
-    <div class="header"></div>
-
-    <Nuxt />
+  <div class="main-container">
+    <div class="main-container__content">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -16,6 +16,17 @@ export default {
 @import "../static/assets/main.scss";
 .main {
   height: 100vh;
-  background-color: $background-color;
+}
+
+// Use grid for small laptop sizes and up
+@media only screen and (min-width: 769px) {
+  .main-container {
+    display: flex;
+    justify-content: center;
+
+    &__content {
+      width: 80%;
+    }
+  }
 }
 </style>

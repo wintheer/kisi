@@ -18,15 +18,12 @@ export default {
   height: 100vh;
 }
 
-// Use grid for small laptop sizes and up
-@media only screen and (min-width: 769px) {
-  .main-container {
-    display: flex;
-    justify-content: center;
+.main-container {
+  display: flex;
+  justify-content: center;
 
-    &__content {
-      width: 80%;
-    }
+  &__content {
+    width: 80%;
   }
 }
 </style>

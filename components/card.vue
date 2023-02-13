@@ -10,10 +10,12 @@
     <div class="hover-container" :class="{ hidden: !hovering }">
       <slot name="description"></slot>
     </div>
+    <img class="arrow" :src="icons.angle" alt="arrow right" />
   </div>
 </template>
 
 <script>
+import angle from './../static/icons/arrow-down-angle.svg';
 export default {
   name: 'Card',
   props: {
@@ -28,14 +30,17 @@ export default {
   },
   data() {
     return {
-      hovering: false
+      hovering: false,
+      icons: {
+        angle
+      }
     };
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../static/assets/main.scss";
+@import '../static/assets/main.scss';
 .image {
   width: 100%;
   height: inherit;
@@ -50,7 +55,7 @@ export default {
     bottom: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(#000, .2);
+    background-color: rgba(#000, 0.2);
   }
 }
 
@@ -76,7 +81,7 @@ export default {
   padding-left: 20px;
   background-color: $card-hover;
   border-radius: 4px;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   opacity: 1;
 
   &.hidden {
@@ -85,6 +90,20 @@ export default {
 
   & span {
     padding-top: 50px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  z-index: 3;
+  height: 15px;
+  transform: rotate(-90deg);
+  filter: brightness(0) invert(1);
+
+  &:hover {
+    transform: rotate(-90deg) scale(1.1);
   }
 }
 </style>

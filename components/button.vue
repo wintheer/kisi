@@ -15,17 +15,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../static/assets/main.scss";
+@import '../static/assets/main.scss';
 
 button {
+  overflow: hidden;
   max-height: 40px;
   padding: 6px 20px;
   color: $white;
   font-size: inherit;
+  white-space: nowrap;
   background-color: $primary-color;
   border: none;
   border-radius: 20px;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
   cursor: pointer;
 
   &:hover {

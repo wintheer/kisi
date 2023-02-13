@@ -17,7 +17,7 @@
     </Card>
     <!-- button always has its own place -->
     <div class="grid--span-2 flex center-horizontally">
-      <Button label="Add more cards" @click="addMoreCards" />
+      <Button label="More cards" @click="addMoreCards" />
     </div>
   </div>
 </template>
@@ -79,7 +79,7 @@ export default {
   display: grid;
 
   gap: 1rem;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .grid--span-2 {
@@ -100,5 +100,24 @@ export default {
 
 .grid--span-6 {
   grid-column: span 6;
+}
+
+@media only screen and (min-width: 800px) {
+  .card-views {
+    display: grid;
+
+    gap: 1rem;
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+// Use grid for small laptop sizes and up
+@media only screen and (min-width: 1200px) {
+  .card-views {
+    display: grid;
+
+    gap: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+  }
 }
 </style>
